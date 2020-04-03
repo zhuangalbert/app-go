@@ -19,7 +19,7 @@ services:
     container_name: app_db_mysql
     ports: 
       - 3306:3306
-    environment:  
+    environment:
       - MYSQL_ROOT_HOST=${DB_HOST} 
       - MYSQL_USER=${DB_USER}
       - MYSQL_PASSWORD=${DB_PASSWORD}
