@@ -19,7 +19,7 @@ git clone git@github.com:zhuangalbert/app-go.git
 cd app-go
 ```
 
-3. Create file .env, by copying from .env.example
+3. Create file .env, by copying from .env.example, don't forget to modify .env value 
 ```bash
 cp .env.example .env
 ```
