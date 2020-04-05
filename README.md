@@ -23,4 +23,18 @@ cd app-go
 ```bash
 cp .env.example .env
 ```
+you can use the mysql database on the local machine with the following configuration : 
+```bash
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=database_name
+DB_USERNAME=database_username
+DB_PASSWORD=database_password
+```
+
+4. run docker-compose with command : 
+```bash
+docker-compose up --build
+```
+
 
