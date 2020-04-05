@@ -4,35 +4,33 @@ services:
     container_name: app_golang
     build: .
     ports: 
-      - 8080:8080 
+      - ${API_PORT}:${API_PORT}
     restart: on-failure
     volumes:
       - api:/usr/src/app/
     depends_on:
-      - app-mysql          
+      - app-postgres          
     networks:
       - app_golang
 
-
-  app-mysql:
-    image: mysql:5.7
-    container_name: app_db_mysql
-    ports: 
-      - 3306:3306
+  app-postgres:
+    image: postgres:latest
+    container_name: app_db_postgres
     environment:
-      - MYSQL_ROOT_HOST=${DB_HOST} 
-      - MYSQL_USER=${DB_USER}
-      - MYSQL_PASSWORD=${DB_PASSWORD}
-      - MYSQL_DATABASE=${DB_NAME}
-      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_USER=${DB_USER}  
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+      - DATABASE_HOST=${DB_HOST} 
+    ports:
+      - '5432:5432'
     volumes:
-      - database_mysql:/var/lib/mysql
+      - database_postgres:/var/lib/postgresql/data
     networks:
       - app_golang
 
 volumes:
   api:
-  database_mysql:                  
+  database_postgres:                  
 
 # Networks to be created to facilitate communication between containers
 networks:

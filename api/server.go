@@ -23,9 +23,7 @@ func Run() {
 	}
 
 	server.Initialize(os.Getenv("DB_DRIVER"), os.Getenv("DB_USER"), os.Getenv("DB_PASSWORD"), os.Getenv("DB_PORT"), os.Getenv("DB_HOST"), os.Getenv("DB_NAME"))
-	//server.Initialize("mysql", "root", "rootpassword", "3306", "172.16.235.1", "godocker")
 	seed.Load(server.DB)
 
-	server.Run(":8080")
-
+	server.Run(":"+os.Getenv("API_PORT"), os.Getenv("API_PORT"))
 }
