@@ -37,5 +37,16 @@ DB_PASSWORD=database_password
 ```bash
 docker-compose up --build
 ```
+this command take a long time.
+If you get a screen like the one below, the setup is successful and you are ready to develop your project:
 
+```bash
+app_golang      | [2020-04-05 16:56:44]  [6.09ms]  INSERT INTO "users" ("username","name","role","password","created_at","updated_at") VALUES ('zhuangalbert','albert','user','/iH3s9LMv4MmzSk.Pnce17ZhaBsusDCu8CF.6q05HciG1Ie','2020-04-05 16:56:44','2020-04-05 16:56:44') RETURNING "users"."id"  
+app_golang      | [1 rows affected or returned ] 
+app_golang      | 
+app_golang      | (/app/api/seed/seeder.go:37) 
+app_golang      | [2020-04-05 16:56:45]  [12.49ms]  INSERT INTO "users" ("username","name","role","password","created_at","updated_at") VALUES ('John Doe','john','user','.H4EtS','2020-04-05 16:56:45','2020-04-05 16:56:45') RETURNING "users"."id"  
+app_golang      | [1 rows affected or returned ] 
+app_golang      | Running :8099
+```
 
