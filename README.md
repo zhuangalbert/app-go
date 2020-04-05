@@ -6,7 +6,7 @@ on this project, you need to install tool on your local :
 - Git
 - Docker
 - Docker Compose
-- Postgres #if you need to use local database
+- Postgres (if you need to use local database)
 
 # How to Setup Local
 
