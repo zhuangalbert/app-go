@@ -24,6 +24,19 @@ cd app-go
 ```bash
 cp .env.example .env
 ```
+my .env :
+```bash
+API_SECRET=go-beta
+API_PORT=8099
+
+DB_HOST=docker.for.mac.localhost
+DB_DRIVER=postgres 
+DB_USER=ab
+DB_PASSWORD=abganteng
+DB_NAME=db
+DB_PORT=5432
+```
+
 you can use the mysql database on the local machine with the following configuration : 
 ```bash
 DB_HOST=127.0.0.1
