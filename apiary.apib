@@ -33,7 +33,35 @@ Creaate new user using this action.
                 "created_at": "2020-04-03T12:19:07.360401+07:00",
                 "updated_at": "2020-04-03T12:19:07.360402+07:00"
             }
-            
+
+
+## Login [/api/login]
+
+### Login [POST]
+
+login user using this action.
+
++ Request (application/json)
+
+        {
+            "username": "user_1",
+            "password" : "user1234"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                 "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE1ODYyMDg4NjgsInVzZXJfaWQiOjN9.KfzBbuuljzzn7TuJUadDYW-9tTZ7PRS27jz43pkL2n0",
+                 "expired_in": 3600,
+                 "username": "user1",
+                 "name": "albert",
+                 "role": "customer",
+                 "created_at": "2020-04-06T20:28:33.141431Z",
+                 "updated_at": "2020-04-06T20:28:33.141448Z"
+            }
+
             
 
 ## Profile [/api/users/profile]
@@ -42,6 +70,11 @@ Creaate new user using this action.
 ### Get Profile [GET]
 
 Get User profile on active user using this action.
+
++ Request
+    + Headers
+
+            Authorization: Bearer {access_token}
 
 + Response 200 (application/json)
 
@@ -62,6 +95,11 @@ Get User profile on active user using this action.
 ### Get Commodity [GET]
 
 Get Commodity list using this action.
+
++ Request
+    + Headers
+
+            Authorization: Bearer {access_token}
 
 + Response 200 (application/json)
 
