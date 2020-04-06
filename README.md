@@ -8,6 +8,20 @@ on this project, you need to install tool on your local :
 - Docker Compose
 - Postgres (if you need to use local database)
 
+### Architecture Structure
+```
+- app-go
+ |- api
+   |- auth
+   |- controllers
+   |- middleware
+   |- models
+   |- responses
+   |- utils
+   |- server.go
+ |- main.go
+```
+
 # How to Setup Local
 
 1. Clone repository using command : 
