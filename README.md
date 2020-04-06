@@ -62,4 +62,26 @@ app_golang      | [2020-04-05 16:56:45]  [12.49ms]  INSERT INTO "users" ("userna
 app_golang      | [1 rows affected or returned ] 
 app_golang      | Running :8099
 ```
+for database migration it's already migrate, on this command. you can using any database client system.
+
+## CURL
+
+- Create User
+
+```bash
+curl --location --request POST 'localhost:8099/api/users' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"username" : "user1",
+	"name" : "albert",
+	"role" : "customer",
+	"password" : "abganteng"
+}'
+```
+![](docs/images/create-user.png)
+
+
+Note : 
+- postman collection : https://www.getpostman.com/collections/94b8163f12ac89ec8a3c
+
 
