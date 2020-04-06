@@ -64,7 +64,7 @@ app_golang      | Running :8099
 ```
 for database migration it's already migrate, on this command. you can using any database client system.
 
-## CURL
+## Documentation - CURL
 
 - Create User
 
@@ -80,8 +80,49 @@ curl --location --request POST 'localhost:8099/api/users' \
 ```
 ![](docs/images/create-user.png)
 
+- Login
+
+```bash
+curl --location --request POST 'localhost:8099/api/login' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"username" : "user1",
+	"password" : "abganteng"
+}'
+```
+![](docs/images/login.png)
+
+- Get Profile
+
+```bash
+curl --location --request GET 'localhost:8099/api/users/profile' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE1ODYyMDg4NjgsInVzZXJfaWQiOjN9.KfzBbuuljzzn7TuJUadDYW-9tTZ7PRS27jz43pkL2n0'
+```
+![](docs/images/get-profile.png)
+
+- Get Commodity
+
+```bash
+curl --location --request GET 'localhost:8099/api/commodity' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE1ODYyMDg4NjgsInVzZXJfaWQiOjN9.KfzBbuuljzzn7TuJUadDYW-9tTZ7PRS27jz43pkL2n0'
+```
+![](docs/images/get-commodity.png)
+
+- Get Area
+
+```bash
+curl --location --request GET 'localhost:8099/api/area'
+```
+![](docs/images/get-area.png)
+
+- Get Size
+
+```bash
+curl --location --request GET 'localhost:8099/api/size'
+```
+![](docs/images/get-size.png)
+
+
 
 Note : 
 - postman collection : https://www.getpostman.com/collections/94b8163f12ac89ec8a3c
-
-
